@@ -15,3 +15,8 @@ def book_character_count(path_to_file):
             else:
                 characters_dict[character] = 1
         return characters_dict
+
+def characters_sorted(path_to_file):
+    characters_dict = book_character_count(path_to_file)
+    characters_dict_list = [{k: v} for k,v in sorted(characters_dict.items(), reverse=True, key=lambda item: item[1])]
+    return characters_dict_list
